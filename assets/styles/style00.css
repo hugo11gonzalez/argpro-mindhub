@@ -48,25 +48,38 @@ header h2{
     margin: auto;
     width: 100px;
     /*border: 1px solid rgb(253, 4, 4);*/
+    position: relative;
+    top: 40px;
+
     
 }
 nav a {
     display:block;
     margin: auto;
 }
+
 a {
     padding: 15px;
 }
+.active {
+    text-decoration: none;
+    color: black;
+  }
 h3, p{
     padding: 5px;
-}
+}/*
 section{
-    padding: 40px;
-}
+    margin: 30px;
+    position: relative;
+    top: 20px;
+}*/
 .texto {
     display: inline-block;
     margin: auto;
     width: 800px;
+    position: absolute;
+    top: 350px;
+    /*height: 300px;*/
     /*border: 1px solid black;*/
     /*padding-right: 500px;*/
     /*background-color: orange;
