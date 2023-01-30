@@ -60,9 +60,20 @@ a {
 .active {
     text-decoration: none;
     background-color: rgb(211, 232, 143);
-  }
+}
 h3, p{
     padding: 5px;
+}
+.imagenes{
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+div img:hover{
+    transform: scale(1.5);
+}
+div img {
+    border: 2px solid black;
 }
 .texto {
     display: inline-block;
