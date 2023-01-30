@@ -4,3 +4,84 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
+header h1 {
+    position: relative;
+    top: 40px;
+    left: 16%;
+    color: white;
+}
+header h2{
+    margin: auto;
+    width: 1000px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.img_header {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 250px;
+}
+.logo{
+    position: absolute;
+    top: 222px;
+    left: 250px;
+}
+.contenedor {
+    display: block;
+    margin: auto;
+    width: 1000px;
+    height: 350px;
+}
+.contenedor_nav {
+    display: inline-block;
+    margin: auto;
+    /* width: 100px; */
+    /* border: 1px solid rgb(253, 4, 4); */
+    position: absolute;
+    top: 289px;
+    right: 16%;
+
+    
+}
+nav a {
+/*     display:block; */
+    margin: auto;
+    background-color: rgb(157, 209, 163);
+    color: white;
+    border: 1px solid black;
+}
+
+a {
+    padding: 10px;
+    
+}
+.active {
+    text-decoration: none;
+    background-color: rgb(211, 232, 143);
+  }
+h3, p{
+    padding: 5px;
+}
+.texto {
+    display: inline-block;
+    margin: auto;
+    width: 800px;
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    /*height: 300px;*/
+    /*border: 1px solid black;*/
+    /*padding-right: 500px;*/
+    /*background-color: orange;
+    /*color: white;
+    text-align: center;*/
+}
+footer{
+    margin: auto;
+    width: 1000px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
