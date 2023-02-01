@@ -4,13 +4,13 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-header{
+.cabecera{
     display: flex;
     height: 10vw;
     align-items: center;
     justify-content: space-between;
 }
-header h1 {
+.cabecera h1 {
     color: white;
     background-color: black;
     border: 2px solid red;
