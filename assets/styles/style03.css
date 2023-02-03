@@ -10,42 +10,48 @@
     width: 100vw;
     align-items: center;
     justify-content: space-around;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    background: linear-gradient(0.25turn, #a4a63f, #ebf8e1, #f69d3c);
+    box-shadow: 10px 5px 5px #f69d3c;
 }
 .logo {
-    width: 3vw;
+    width: 4vw;
     /* border-radius: 50%; */
 }
 .cabecera h1 {
-    color: white;
-    background-color: black;
-    border: 2px solid red;
+    color: rgba(255, 255, 0, 0.794);
+    /* background-color: black; */
+    text-shadow: rgb(160, 98, 28) 2px 5px;
+    /* border: 2px solid red; */
 }
 nav a {
     margin: auto;
-    background-color: rgb(157, 209, 163);
-    color: white;
+    background-color: #a4a63f;
+    color: rgb(10, 10, 10);
     border: 1px solid black;
+    box-shadow: 10px 5px 5px rgb(160, 98, 28);
 }
 a {
     padding: 10px;
 }
 .active {
 text-decoration: none;
-background-color: rgb(211, 232, 143);
+background-color: #f69d3c;
 }
-img_header{
-    transform: scale(0.5);
-}
+/* .img_header{
+    transform: scale(0.1);
+    z-index: -1;
+} */
 .contenedor{
     display: flex;
     height: 80vh;
     width: 100vw;
-    flex-direction:column;
+    flex-direction:row;
     flex-wrap: nowrap;
     /* flex-shrink: 1; */
     align-items: center;
+    /* align-content: center; */
     justify-content:center;
+    border: 1px solid black;
 
 }
 
@@ -61,16 +67,17 @@ div img {
     border: 2px solid black;
 }
 
-/* .tabla{
-    border: 2px solid blueviolet;
+.tabla{
+    /* border: 2px solid blueviolet; */
     text-align: center;
-    background-color: beige;
-
-
+    /* background-color: beige; */
+    margin: auto;
+    
 }
 caption {
-    background-color: beige;
-} */
+    /* background-color: beige; */
+    padding-top: 20px;
+}
 .tabla td{
     margin: 1rem;
     padding: 1rem;
@@ -80,13 +87,28 @@ caption {
 } */
 
 .texto{
-    height: 40vh;
-    width: 80vw;
+    height: 60vh;
+    width: 60vw;
     color: brown;
-
+    /* opacity: 0.5; */
+    /* border: 1px solid black; */
+    align-content: center;
+    text-align: center;
+    /* align-content: center; */
+    /* margin: 15px; */
+    /* align-items: center;
+    justify-content: center; */
+    /*background-image: url("../img/LogoMightyducks-01.png");*/ /* The image used */
+    background-color: #f0f1b3; /* Used if the image is unavailable */
+    /*background-position: center; /* Center the image */
+    /*background-repeat: no-repeat; /* Do not repeat the image */
+    /*background-size: cover; /* Resize the background image to cover the entire container */
+    /*background-size: 25%;/*  */
+    
 }
 .listas{
     list-style-position: inside;
+    text-align: center;
 }
 .pie_pagina{
     display: flex;
@@ -94,5 +116,5 @@ caption {
     width: 100vw;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    background: linear-gradient(0.25turn, #f69d3c, #ebf8e1,#a4a63f );
 }
