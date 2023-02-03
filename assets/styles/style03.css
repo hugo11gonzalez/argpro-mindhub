@@ -10,6 +10,11 @@
     width: 100vw;
     align-items: center;
     justify-content: space-around;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+.logo {
+    width: 3vw;
+    /* border-radius: 50%; */
 }
 .cabecera h1 {
     color: white;
@@ -33,14 +38,23 @@ background-color: rgb(211, 232, 143);
     display: flex;
     height: 80vh;
     width: 100vw;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    /* flex-shrink: 1; */
     align-items: center;
-    justify-content:space-around;
+    justify-content:center;
 
 }
 
- .imagenes{
-    height:20vh;
-    width:80vw;
+.imagenes{
+    transform: scale(0.5);
+    display: inline-flex;
+}
+div img:hover{
+    transform: scale(1.5);
+}
+div img {
+    border: 2px solid black;
 }
 
 /* .tabla{
@@ -62,8 +76,10 @@ caption {
 } */
 
 .texto{
-    height: 70vh;
-    width: 80vw;
+    /* height: 70vh; */
+    width: 40vw;
+    color: brown;
+
 }
 .listas{
     list-style-position: inside;
@@ -74,4 +90,5 @@ caption {
     width: 100vw;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 }
