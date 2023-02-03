@@ -34,6 +34,9 @@ a {
 text-decoration: none;
 background-color: rgb(211, 232, 143);
 }
+img_header{
+    transform: scale(0.5);
+}
 .contenedor{
     display: flex;
     height: 80vh;
@@ -48,7 +51,8 @@ background-color: rgb(211, 232, 143);
 
 .imagenes{
     transform: scale(0.5);
-    display: inline-flex;
+    /* display: inline-flex;
+    padding: 20px; */
 }
 div img:hover{
     transform: scale(1.5);
@@ -76,8 +80,8 @@ caption {
 } */
 
 .texto{
-    /* height: 70vh; */
-    width: 40vw;
+    height: 40vh;
+    width: 80vw;
     color: brown;
 
 }
