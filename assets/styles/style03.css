@@ -6,24 +6,72 @@
 }
 .cabecera{
     display: flex;
-    height: 10vw;
+    height: 10vh;
+    width: 100vw;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .cabecera h1 {
     color: white;
     background-color: black;
     border: 2px solid red;
 }
+nav a {
+    margin: auto;
+    background-color: rgb(157, 209, 163);
+    color: white;
+    border: 1px solid black;
+}
+a {
+    padding: 10px;
+}
+.active {
+text-decoration: none;
+background-color: rgb(211, 232, 143);
+}
 .contenedor{
     display: flex;
-    /* height: 50vw; */
+    height: 80vh;
+    width: 100vw;
     align-items: center;
     justify-content:space-around;
+
+}
+
+ .imagenes{
+    height:20vh;
+    width:80vw;
+}
+
+/* .tabla{
+    border: 2px solid blueviolet;
+    text-align: center;
+    background-color: beige;
+
+
+}
+caption {
+    background-color: beige;
+} */
+.tabla td{
+    margin: 1rem;
+    padding: 1rem;
+}
+/* .tabla tr th{
+    margin: 1rem;
+} */
+
+.texto{
+    height: 70vh;
+    width: 80vw;
+}
+.listas{
+    list-style-position: inside;
 }
 .pie_pagina{
-    /* height: 10vw; */
     display: flex;
+    height: 10vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
 }
