@@ -111,6 +111,23 @@ caption {
     list-style-position: inside;
     text-align: center;
 }
+form{
+    border: 2px solid white;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+fieldset{
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+legend{
+    padding: 0.2rem;
+}
 .pie_pagina{
     display: flex;
     height: 10vh;

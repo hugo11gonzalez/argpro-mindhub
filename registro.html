@@ -1,0 +1,128 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/style03.css" />
+    <link rel="shortcut icon" href="./assets/img/LogoMightyducks-01.png" type="image/x-icon">
+    <title>Registro</title>
+  </head>
+  <body>
+    <header class="cabecera">
+      <img
+        class="logo"
+        src="./assets/img/LogoMightyducks-01.png"
+        alt=""
+        width="100"
+      />
+      <h1>Mighty Ducks Hockey League</h1>
+      <div class="contenedor_nav">
+        <nav>
+          <a href="./index.html">Home</a>
+          <a href="./acerca.html">About MDHL</a>
+          <a href="./contacto.html">Contact</a>
+          <a href="./informacion_juego.html">Informacion de Juegos</a>
+          <a href="./reglas.html">Reglas</a>
+          <a class="active"href=".#">Registro</a>
+        </nav>
+        <!-- <img class="img_header" src="./assets/img/design1_image2.jpg" alt="" width="100"/> -->
+      </div>
+    </header>
+    <main class="contenedor">
+      <!-- <div class="imagen fondo">
+        <img src="./assets/img/hockey1.jpg" alt="" width="100" >
+      </div> -->
+
+      <!-- <div class="imagenes">
+        <div>
+          <img src="./assets/img/hockey1.jpg" alt="" width="100" />
+        </div>
+        <div>
+          <img src="./assets/img/hockey2.jpg" alt="" width="100" />
+        </div>
+        <div>
+          <img src="./assets/img/hockey3.jpg" alt="" width="100" />
+        </div>
+      </div> -->
+      <h1>Formularios y mapas</h1>
+      <form action="./show_data.html" method="get">
+          <fieldset>
+              <label for="nombre">Nombre y Apellido: <span style="color:red;">*</span></label>
+              <input required type="text" name="nombre" id="nombre" placeholder="Pepito Juarez">
+          </fieldset>
+          <fieldset>
+              <label>
+                  Edad:
+                  <input name="edad" type="number" max="100" min="1" placeholder="1-100">
+              </label>
+          </fieldset>
+          <fieldset>
+              <label>
+                  Fecha de nacimiento: 
+                  <input type="date" name="" id="">
+              </label>
+          </fieldset>
+          <fieldset>
+              <legend>Email</legend>
+              <input type="email" name="email">
+              <!-- <label>
+                  Email:
+              </label> -->
+          </fieldset>
+          <fieldset>
+              <label>
+                  Color Favorito:
+                  <input type="color" name="colorFavorito">
+              </label>
+          </fieldset>
+          <fieldset>
+              <legend>Colores</legend>
+              <label>
+                  Amarillo
+                  <input type="checkbox" name="color1" value="Amarillo">
+              </label>
+              <label>
+                  Azul
+                  <input type="checkbox" name="color2" value="Azul">
+              </label>
+              <label>
+                  Rojo
+                  <input type="checkbox" name="color3" value="Rojo">
+              </label>
+          </fieldset>
+          <fieldset>
+              <legend>Tamaño</legend>
+              <label>
+                  S
+                  <input type="radio" name="tamanio" value="S">
+              </label>
+              <label>
+                  M
+                  <input checked type="radio" name="tamanio" value="M">
+              </label>
+              <label>
+                  L
+                  <input type="radio" name="tamanio" value="L">
+              </label>
+              <label>
+                  XL
+                  <input type="radio" name="tamanio" value="XL">
+              </label>
+          </fieldset>
+          <!-- <label for="nacionalidad">Nacionalidad</label> -->
+          <select name="nacionalidad" id="nacionalidad">
+              <option value="" disabled selected>Nacionalidad...</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Chile">Chile</option>
+              <option value="Colombia">Colombia</option>
+          </select>
+          <input type="submit" value="Enviar datos">
+      </form>
+      <h2><span style="color:red;">*</span> Estos campos son obligatorios</h2>
+      
+    </main>
+    <footer class="pie_pagina">
+      <p><b>HugoGonzalez&reg2023</b></p>
+    </footer>
+  </body>
+</html>
