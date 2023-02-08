@@ -62,8 +62,8 @@
                             <label for="city">City: <span style="color:red;">*</span></label>
                             <select name="city" id="city">
                                 <option value="" disabled selected>......</option>
-                                <option value="Argentina">Argentina</option>
-                                <option value="Bolivia">Bolivia</option>
+                                <option value="EEUU">EEUU</option>
+                                <option value="Canada">Canada</option>
                                 <option value="Chile">Chile</option>
                                 <option value="Colombia">Colombia</option>
                             </select>
@@ -72,13 +72,9 @@
                     </fieldset>
                     <!--  -->
                     <fieldset>
-                        <label for="birth-date"
-                          >Birth Date(mm/dd/yyyy): <span style="color: red"></span></label
-                        >
-                        <input required type="date" name="birth-date" id="birth-date" />
-                        <label for="Gender"
-                          >Gender: <span style="color: red"></span></label
-                        >
+                        <label for="birth-date">Birth Date(mm/dd/yyyy): <span style="color: red">*</span></label>
+                        <input required type="date" name="birth-date" id="birth-date" placeholder="11/11/1983"/>
+                        <label for="Gender">Gender: <span style="color: red">*</span></label>
                         <label>
                           <input type="radio" name="Gender" value="Female" />
                           Female
@@ -89,10 +85,8 @@
                         </label>
                       </fieldset>
                       <fieldset>
-                        <label>
-                          Grade:
-                          <label>
-                            <input type="radio" name="Grade" value="-1" />
+                        <label label for="Grade">Grade: <span style="color: red">*</span>
+                          <input type="radio" name="Grade" value="-1" />
                             Pre-School
                           </label>
                         </label>
@@ -119,94 +113,148 @@
                       </fieldset>
                     <!--  -->
                     <fieldset>
-                        <label for="birth_date">Birth_Date: <span style="color:red;">*</span></label>
-                            <input required type="date" name="birth_date" id="birth_date" placeholder="Villa Hernandarias">
-                            <legend>Gender</legend>
-                            <label for="gender">Birth_Date: <span style="color:red;">*</span></label>
-                                Female
-                                <input type="radio" name="gender" value="Female">
-                            </label>
-                            <label>
-                                Male
-                                <input checked type="radio" name="gender" value="Male">
-                            </label>
-                    </fieldset>
-                     <fieldset>
-                        <label>
-                            Fecha de nacimiento: 
-                            <input type="date" name="" id="">
-                        </label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Email</legend>
-                        <input type="email" name="email">
-                        <!-- <label>
-                            Email:
-                        </label> -->
-                    </fieldset>
-                    <fieldset>
-                        <label>
-                            Color Favorito:
-                            <input type="color" name="colorFavorito">
-                        </label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Colores</legend>
-                        <label>
-                            Amarillo
-                            <input type="checkbox" name="color1" value="Amarillo">
-                        </label>
-                        <label>
-                            Azul
-                            <input type="checkbox" name="color2" value="Azul">
-                        </label>
-                        <label>
-                            Rojo
-                            <input type="checkbox" name="color3" value="Rojo">
-                        </label>
+                      <p><strong>which elementary school do you live near?</strong></p>
+                      <label><strong>Closest School:</strong></label>
+                      <label
+                        >AJ Katzenmaier
+                        <input
+                          checked
+                          type="radio"
+                          name="Closest-School"
+                          value="AJ Katzenmaier"
+                      /></label>
+                      <label
+                        >Marjorie P Hart
+                        <input type="radio" name="Closest-School" value="Marjorie P Hart"
+                      /></label>
+                      <label
+                        >Greenbay
+                        <input type="radio" name="Closest-School" value="Greenbay"
+                      /></label>
+                      <label
+                        >North Elementary
+                        <input
+                          type="radio"
+                          name="Closest-School"
+                          value="North Elementary"
+                      /></label>
+                      <label
+                        >Howard A Yearger
+                        <input
+                          type="radio"
+                          name="Closest-School"
+                          value="Howard A Yearger"
+                      /></label>
+                      <label
+                        >South Elementary
+                        <input
+                          type="radio"
+                          name="Closest-School"
+                          value="South Elementary"
+                      /></label>
                     </fieldset>
                     <fieldset>
-                        <legend>Tamaño</legend>
-                        <label>
-                            S
-                            <input type="radio" name="tamanio" value="S">
-                        </label>
-                        <label>
-                            M
-                            <input checked type="radio" name="tamanio" value="M">
-                        </label>
-                        <label>
-                            L
-                            <input type="radio" name="tamanio" value="L">
-                        </label>
-                        <label>
-                            XL
-                            <input type="radio" name="tamanio" value="XL">
-                        </label>
+                      <p>
+                        <strong
+                          >What position(s) do you normally play? (chech all that
+                          apply)</strong
+                        >
+                      </p>
+                      <label>
+                        Forward
+                        <input type="checkbox" name="Positions" value="Forward" />
+                      </label>
+                      <label>
+                        Midfield
+                        <input type="checkbox" name="Positions" value="Midfield" />
+                      </label>
+                      <label>
+                        Defense
+                        <input type="checkbox" name="Positions" value="Defense" />
+                      </label>
+                      <label>
+                        Goalkeeper
+                        <input type="checkbox" name="Positions" value="Goalkeeper" />
+                      </label>
                     </fieldset>
-                    <!-- <label for="nacionalidad">Nacionalidad</label> -->
-                    <select name="nacionalidad" id="nacionalidad">
-                        <option value="" disabled selected>Nacionalidad...</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Bolivia">Bolivia</option>
-                        <option value="Chile">Chile</option>
-                        <option value="Colombia">Colombia</option>
-                    </select>
-                    <input type="submit" value="Enviar datos">
+                    <fieldset>
+                      <p><strong>Uniform Size:</strong></p>
+                      <label>
+                        Youth Small
+                        <input
+                          checked
+                          type="radio"
+                          name="Uniform-Size"
+                          value="Youth Small"
+                        />
+                      </label>
+                      <label>
+                        Youth Medium
+                        <input type="radio" name="Uniform-Size" value="Youth Medium" />
+                      </label>
+                      <label>
+                        Youth Large
+                        <input type="radio" name="Uniform-Size" value="Youth Large" />
+                      </label>
+                      <label>
+                        Small
+                        <input type="radio" name="Uniform-Size" value="Small" />
+                      </label>
+                      <label>
+                        Medium
+                        <input type="radio" name="Uniform-Size" value="Medium" />
+                      </label>
+                      <label>
+                        Large
+                        <input type="radio" name="Uniform-Size" value="Large" />
+                      </label>
+                      <label>
+                        Extra-Large
+                        <input type="radio" name="Uniform-Size" value="Extra-Large" />
+                      </label>
+                    </fieldset>
+                    <fieldset>
+                      <p><strong>Permission to Play</strong></p>
+                      <p>
+                        I, the parent or guardian of the minor registrant, agree that the
+                        registrant and I will abide by all the rules of the Mighty Ducks
+                        Hockey League (MDHL). In recognizing the possibility of physical
+                        injury associated with hockey and in consideration for the
+                        "League" accepting the registrant for its hockey programs and
+                        activities, i hereby release, discharge,and/or otherwise indemnify
+                        MDHL, their employees and asociated personnel and volunteers,
+                        including the facilities used for practices and games, against any
+                        claim by or on behalf of the registrant as a result of the
+                        registrant`s participation in the programand/orbeing transported
+                        to or from MDHL sponsored activities, which transportation By
+                        signing below, I hereby agree and authorizethe above. In addition,
+                        by signing below, also acknowledge that I have read the
+                        cancellation policy and agree to its terms.
+                      </p>
+                    </fieldset>
+                    <fieldset>
+                      <label for="Parent/GuardianSignature:"
+                        >Parent/GuardianSignature:
+                        <span style="color: red"></span></label
+                      >
+                      <input
+                        required
+                        type="text"
+                        name="Parent/GuardianSignature"
+                        id="parent-guardianSignature"
+                      />
+                    </fieldset>
+                    <fieldset>
+                      <label for="Parent/GuardianSignature:"
+                        >Date: <span style="color: red"></span></label
+                      >
+                      <input required type="date" name="Date" id="date" />
+                    </fieldset>
+                    <input type="submit" value="Submit" />
                 </form>
                 <h2><span style="color:red;">*</span> Estos campos son obligatorios</h2>
-      </div>
-      <div>
-        <p> <strong>Permission to Play</strong></p>
-        <p>I, the parent or guardian of the minor registrant, agree that the registrant and I will abide by all the rules</p>
-        <p>of the Mighty Ducks Hockey League (MDHL). In recognizing the possibility of physical injury associated</p>
-        <p>with hockey and in consideration for the "League" accepting the registrant for its hockey programs and activities,</p>
-        <p>i hereby release, discharge,and/or otherwise indemnify MDHL, their employees and asociated personnel and volunteers, including</p>
-        <p>the facilities used for practices and games, against any claim by or on behalf of the registrant as a result of the registrant`s participation</p>
-        <p>in the programand/orbeing transported to or from MDHL sponsored activities, which transportation</p>
-        <p>By signing below, I hereby agree and authorizethe above. In addition, by signing below, also acknowledge that I have read the cancellation policy and agree to its terms.</p>
-        <p>Parent/GuardianSignature:__________________________________</p>
-        <p>Date:________________________________</p>
+
+                
       </div>
       
     </main>
