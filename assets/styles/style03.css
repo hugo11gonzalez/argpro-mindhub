@@ -12,6 +12,9 @@
     justify-content: space-around;
     background: linear-gradient(0.25turn, #a4a63f, #ebf8e1, #f69d3c);
     box-shadow: 10px 5px 5px #f69d3c;
+    flex-direction: row;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 .logo {
     width: 4vw;
@@ -74,13 +77,16 @@ div img {
     margin: auto;
     
 }
+iframe {
+    transform: 0.5;
+}
 caption {
     /* background-color: beige; */
     padding-top: 20px;
 }
 .tabla td{
-    margin: 1rem;
-    padding: 1rem;
+/*     margin: 1rem; */
+    padding: 0.5rem;
 }
 /* .tabla tr th{
     margin: 1rem;
@@ -106,6 +112,9 @@ caption {
     /*background-size: cover; /* Resize the background image to cover the entire container */
     /*background-size: 25%;/*  */
     
+}
+article {
+    padding: 1rem;
 }
 .listas{
     list-style-position: inside;
