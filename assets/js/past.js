@@ -17,6 +17,7 @@ function filtrarEventosPasados(arrayEventos, fechaActual) {
     console.log("eventos pasados: ", eventosPasados);
 }
 filtrarEventosPasados(arrayEventos,fechaActual)
+
 const contenedorEventos = document.querySelector(".contenedor-eventos");
 let eventosHtml= "";
 
