@@ -1,13 +1,27 @@
-console.log("test");
-console.log("data: ", data.currentDate);
+console.log("test past");
+/* Filtro eventos pasados */
+
+const arrayEventos=data.events;
+
+const eventosPasados=[];
+
+let fechaActual=data.currentDate;
+
+function filtrarEventosPasados(arrayEventos, fechaActual) {
+    for (const evento of arrayEventos) {
+        if (evento.date < fechaActual) {
+            eventosPasados.push(evento)
+        }
+        
+    }
+    console.log("eventos pasados: ", eventosPasados);
+}
+filtrarEventosPasados(arrayEventos,fechaActual)
 const contenedorEventos = document.querySelector(".contenedor-eventos");
-
-const arrayEventos = data.events;
-
 let eventosHtml= "";
 
-function mostrarEventos(arrayEventos) {
-    for (const evento of arrayEventos) {
+function mostrarEventosPasados(eventosPasados) {
+    for (const evento of eventosPasados) {
         eventosHtml += `<div class="col-12 col-sm-10 col-md-9 col-lg-4 col-xl-3 p-0 d-flex align-self-lg-stretch justify-content-center">
         
           <div class="card d-flex flex-column w-100">
@@ -28,5 +42,5 @@ function mostrarEventos(arrayEventos) {
     
 }
 
-mostrarEventos(arrayEventos)
+mostrarEventosPasados(eventosPasados)
 contenedorEventos.innerHTML = eventosHtml;
