@@ -3,6 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+header{
+    min-height: 10vh;
+}
 .logo{
     height: 25px;
+}
+main{
+    min-height: 85vh;
+    background-color: blueviolet;
+}
+footer{
+    height: 5vh;
+    background-color: blanchedalmond;
 }
