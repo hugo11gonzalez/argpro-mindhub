@@ -3,21 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    min-height: 5vh;
-    /* background-color: brown; */
-    /* border-style: inset; */
-}
+
 .logo{
     height: 25px;
 }
-main{
+main{   
     min-height: 80vh;
     background-color: blueviolet;
     
 }
 footer{
-    height: 10vh;
+    height: 15vh;
     background-color: blanchedalmond;
 }
 footer svg {
