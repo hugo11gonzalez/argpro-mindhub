@@ -13,7 +13,7 @@ let cardsGenerated = crearCard(filtroTarjetasFuturo)
 //Renderizo las cards que cree
 contenedorCard.innerHTML = tarjetas
 
-//Funcion que filtra los eventos futuros , recibe de parametro data.js y la fecha actual de la variable currentDate del data.js
+//Funcion que filtra los eventos futuros, recibe de parametro data.js y la fecha actual de la variable currentDate del data.js
 function filterEventsUpcoming(data, currentDate){
     const eventUpcoming=[];
     for (const event of data) {
@@ -38,12 +38,17 @@ function crearCard(data){
           <p class="card-text">${evento.description}</p>
           <div class="btn-bottom d-flex justify-content-between align-content-center mt-3 gap-3">
                 <p class="m-0 "> Price: $${evento.price}</p>
-                <button class="btn btn-primary">Detalles</button>
+                
+                <input class="btn btn-primary" type="button"  onclick="seeDetail('${evento._id}')" value="Detalles">
+
         </div>
         </div>
       </div>`
         
     }
-    
     return tarjetas
+}
+
+function seeDetail(id){
+  window.location.href=`./details.html?id=${id}`
 }
