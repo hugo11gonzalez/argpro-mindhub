@@ -12,18 +12,21 @@ const contenedorCard= document.querySelector('#contenedor_tarjetas')
 console.log(contenedorCard)
 let tarjetas =''
 
-tarjetas += `<div class="card" style="width: 18rem;">
-        <img src="${profile[0].image}" class="card-img-top img-fluid img-thumbnail" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${profile[0].name}</h5>
-          <p class="card-text">${profile[0].description}</p>
-          <div class="btn-bottom d-flex justify-content-between align-content-center mt-3 gap-3">
-                <p class="m-0 "> Price: $${profile[0].price}</p>
-                
-                
-
-        </div>
-        </div>
-      </div>`
+tarjetas += `<div class="card mb-3">
+<div class="row g-0">
+  <div class="col-md-4">
+    <img src="${profile[0].image}" class="img-fluid rounded-start" alt="${profile[0].name}">
+  </div>
+  <div class="col-md-8">
+    <div class="card-body">
+      <h5 class="card-title">${profile[0].name}</h5>
+      <p class="card-text">${profile[0].description}</p>
+      <p class="card-text">Fecha del evento: ${profile[0].date}</p>
+      <p class="card-text">Capacidad Espectadores: ${profile[0].capacity}</p>
+      <p class="card-text m-0 "> Price: $${profile[0].price}</p>
+    </div>
+  </div>
+</div>
+</div>`
 
       contenedorCard.innerHTML = tarjetas
