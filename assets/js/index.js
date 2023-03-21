@@ -9,9 +9,11 @@ const searchFilter = document.querySelector('#searchInput')
 /* const dataEvents = data.events; */
 //Creamos la variable eventos que es un array
 let eventos=[]
+/* let api='https://mindhub-xj03.onrender.com/api/amazing' */
+let api='./assets/js/amazing.json'
 //Creamos la funcion traerDatos y utilizamos para traer los datos desde una API con la funcion fetch 
 function traerDatos() {
-  fetch('https://mindhub-xj03.onrender.com/api/amazing')
+  fetch(api)
   .then(response => response.json())
   .then(datosApi => {
     console.log(datosApi)

@@ -3,14 +3,14 @@ const params = new URLSearchParams(document.location.search)
 const id = params.get('id')
 console.log(id);
 /* Renderizamos los datos del evento*/
-const contenedorCard= document.querySelector('#contenedor_tarjetas')
+/* const contenedorCard= document.querySelector('#contenedor_tarjetas')
 console.log(contenedorCard)
 //Creamos la variable eventos que es un array
 let eventos=[]
-let profile=[]
+let profile=[] */
 //Creamos la funcion traerDatos y utilizamos para traer los datos desde una API con la funcion fetch 
 function traerDatos() {
-  fetch('https://mindhub-xj03.onrender.com/api/amazing')
+  fetch(api)
   .then(response => response.json())
   .then(datosApi => {
     console.log(datosApi)
@@ -18,7 +18,7 @@ function traerDatos() {
     console.log(eventos)
     profile = eventos.filter(info=>info._id ==id)
     console.log(profile);
-    crearCard(profile, contenedorCard)
+    crearCardDetails(profile, contenedorCard)
     
   })
   .catch(error => console.log(error.message))
@@ -27,10 +27,10 @@ function traerDatos() {
 traerDatos()
 
 
-function crearCard(array, _lugar){
-  let tarjetas =''
+function crearCardDetails(array, _lugar){
+  let tarjeta =''
 
-  tarjetas += `<div class="card mb-3">
+  tarjeta += `<div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="${profile[0].image}" class="img-fluid rounded-start" alt="${profile[0].name}">
@@ -47,5 +47,5 @@ function crearCard(array, _lugar){
   </div>
   </div>`
   
-  contenedorCard.innerHTML = tarjetas
+  contenedorCard.innerHTML = tarjeta
 }
