@@ -6,7 +6,24 @@ const contenedorCheck = document.querySelector('#categorias');
 //Guardo en la constante searchFilter el 1er elemento con el id searchInput
 const searchFilter = document.querySelector('#searchInput')
 //Guardo en la constante dataEvents el acceso a eventos del data.js
-const dataEvents = data.events;
+/* const dataEvents = data.events; */
+//Creamos la variable eventos que es un array
+let eventos=[]
+//Creamos la funcion traerDatos y utilizamos para traer los datos desde una API con la funcion fetch 
+function traerDatos() {
+  fetch('https://mindhub-xj03.onrender.com/api/amazing')
+  .then(response => response.json())
+  .then(datosApi => {
+    console.log(datosApi)
+    eventos = datosApi.events
+    console.log(eventos)
+    crearCard(eventos, contenedorCard)
+    crearCheckBoxes(eventos, contenedorCheck)
+  })
+  .catch(error => console.log(error.message))
+  
+}
+traerDatos()
 console.log(contenedorCard)
 console.log(contenedorCheck)
 console.log(searchFilter)
@@ -36,7 +53,7 @@ function superFiltro(){
   //dataEvents es el array y searchFilter.value es la propiedad que devuelve el
   //dato del valor cursor en la posicion actual  
 
-  let primerFiltro = filtrarPorTexto(dataEvents,searchFilter.value)
+  let primerFiltro = filtrarPorTexto(eventos,searchFilter.value)
 
   //creamos la variable segundoFiltro y le asignamos 
   //la funcion filtrarPorCategorias que captura los checkboxs seleccionados
@@ -49,13 +66,10 @@ function superFiltro(){
   //y le pasamos el el array con los datos filtrados por segundoFiltro 
   crearCard(segundoFiltro)
 }
-//Renderizamos las cards con los datos del array dataEvents (se ven todas las cards)
-crearCard(dataEvents)
-//Creamos los checkbox con los con los datos del array dataEvents (se ven todos las checkbox)
-crearCheckBoxes(dataEvents)
+
 
 //funcion que crea los checkbox recibe como parametro 
-function crearCheckBoxes(array){
+function crearCheckBoxes(array,_lugar){
   //Declaro la variable local arrayCategorias que nos va a 
   //generar por medio de un map un nuevo array pero solamente
   //con el atributo category(categoria) del array dataEvents 
@@ -86,9 +100,9 @@ function crearCheckBoxes(array){
   contenedorCheck.innerHTML = checkboxes
 }
 //Dibujo las cards
-function crearCard(array){
+function crearCard(array, _lugar){
   if(array.length == 0){
-      contenedor.innerHTML = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
+    contenedorCard.innerHTML = `<h2 class="display-1 fw-bolder justify-content-center align-items-center">No hay coincidencias</h2>`
       return
   }
   let tarjetas = ''

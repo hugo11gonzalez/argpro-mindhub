@@ -1,17 +1,3 @@
-/* //Guardo en la constante contenedorcard el 1er elemento con el id contenedor_tarjetas 
-const contenedorCard= document.querySelector('#contenedor_tarjetas')
-console.log(contenedorCard)
-//Creo un String vacio tarjetas
-let tarjetas =''
-//Obtengo del data.js la variable que figura como fecha actual
-let currentDate=data.currentDate;
-console.log(currentDate)
-//Filtro las eventos futuros
-let filtroTarjetasFuturo= filterEventsUpcoming(data.events, currentDate)
-//creo las Cards
-let cardsGenerated = crearCard(filtroTarjetasFuturo)
-//Renderizo las cards que cree
-contenedorCard.innerHTML = tarjetas */
 //Guardo en la constante contenedorcard el 1er elemento con el id contenedor_tarjetas donde se van a dibujar las tarjetas
 const contenedorCard= document.querySelector('#contenedor_tarjetas')
 //Guardo en la constante contenedorCheck el 1er elemento con el id categorias donde se van a dibujar las checkboxs
@@ -20,14 +6,31 @@ const contenedorCheck = document.querySelector('#categorias');
 //Guardo en la constante searchFilter el 1er elemento con el id searchInput
 const searchFilter = document.querySelector('#searchInput')
 //Guardo en la constante dataEvents el acceso a eventos del data.js
-const dataEvents = data.events;
+/* const dataEvents = data.events*/
 
-let currentDate=data.currentDate;
+let currentDate=""
+let eventos=[]
+//Creamos la funcion traerDatos y utilizamos para traer los datos desde una API con la funcion fetch 
+function traerDatos() {
+  fetch('https://mindhub-xj03.onrender.com/api/amazing')
+  .then(response => response.json())
+  .then(datosApi => {
+    console.log(datosApi)
+    eventos = datosApi.events
+    currentDate=datosApi.currentDate
+    console.log(eventos)
+    crearCard(filterEventsUpcoming(eventos, currentDate), contenedorCard)
+    crearCheckBoxes(filterEventsUpcoming(eventos, currentDate), contenedorCheck)
+  })
+  .catch(error => console.log(error.message))
+  
+}
+traerDatos()
 
 console.log(contenedorCard)
 console.log(contenedorCheck)
 console.log(searchFilter)
-console.log(currentDate)
+/* console.log(currentDate) */
 
 //Utilizamos el selector input capturado  y lo ponemos a escuchar el 
 //evento del DOM input. El método addEventListener() puede recibir 3 parametros
@@ -48,7 +51,7 @@ contenedorCheck.addEventListener('change',superFiltro)
 //funciones que definimos mas abajo
 function superFiltro(){
 
-  let filtroTarjetasFuturo= filterEventsUpcoming(dataEvents, currentDate)
+  let filtroTarjetasFuturo= filterEventsUpcoming(eventos, currentDate)
 
   //creamos la variable primerFiltro y le asignamos 
   //la funcion filtrarPorTexto que captura el texto 
@@ -71,15 +74,11 @@ function superFiltro(){
   crearCard(segundoFiltro)
 }
 
-let filtroTarjetasFuturo= filterEventsUpcoming(data.events, currentDate)
-//Renderizamos las cards con los datos del array dataEvents (se ven todas las cards)
-/* crearCard(dataEvents) */
-crearCard(filtroTarjetasFuturo) 
-//Creamos los checkbox con los con los datos del array dataEvents (se ven todos las checkbox)
-crearCheckBoxes(filtroTarjetasFuturo)
+/* let filtroTarjetasFuturo= filterEventsUpcoming(eventos, currentDate) */
+
 
 //funcion que crea los checkbox recibe como parametro 
-function crearCheckBoxes(array){
+function crearCheckBoxes(array, _lugar){
   //Declaro la variable local arrayCategorias que nos va a 
   //generar por medio de un map un nuevo array pero solamente
   //con el atributo category(categoria) del array dataEvents 
@@ -101,8 +100,8 @@ function crearCheckBoxes(array){
   let checkboxes = ''
   //Recorro el arrayChecks con un forEach y renderizo los checkbox con las categorias 
   arrayChecks.forEach(category => {
-      checkboxes += `<div class="form-check" form-switch role="switch">
-      <input class="form-check-input" type="checkbox"  id="${category}" value="${category}">
+      checkboxes += `<div class="form-check" form-switch >
+      <input class="form-check-input" type="checkbox" role="switch" id="${category}" value="${category}">
       <label class="form-check-label" for="${category}">${category}</label>
     </div>`
   })
@@ -110,9 +109,9 @@ function crearCheckBoxes(array){
   contenedorCheck.innerHTML = checkboxes
 }
 //Dibujo las cards
-function crearCard(array){
+function crearCard(array, _lugar){
   if(array.length == 0){
-      contenedor.innerHTML = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
+    contenedorCard.innerHTML = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
       return
   }
   let tarjetas = ''
@@ -175,15 +174,14 @@ function filtrarPorCategorias(array){
   return array
 }
 //Funcion que filtra los eventos futuros, recibe de parametro data.js y la fecha actual de la variable currentDate del data.js
-function filterEventsUpcoming(data, currentDate){
+function filterEventsUpcoming(eventos, currentDate){
     const eventUpcoming=[];
-    for (const event of data) {
-        if(event.date>currentDate){
-            eventUpcoming.push(event)
+    eventos.forEach(evento => {
+      if(evento.date>currentDate){
+        eventUpcoming.push(evento)
 
-        }
-        
     }
+    });
     console.log("Eventos futuros: ", eventUpcoming)
     return eventUpcoming
 

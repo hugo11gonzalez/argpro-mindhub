@@ -6,9 +6,29 @@ const contenedorCheck = document.querySelector('#categorias');
 //Guardo en la constante searchFilter el 1er elemento con el id searchInput
 const searchFilter = document.querySelector('#searchInput')
 //Guardo en la constante dataEvents el acceso a eventos del data.js
-const dataEvents = data.events;
+/* const dataEvents = data.events;
 
-let currentDate=data.currentDate;
+let currentDate=data.currentDate; */
+
+let currentDate=""
+let eventos=[]
+//Creamos la funcion traerDatos y utilizamos para traer los datos desde una API con la funcion fetch 
+function traerDatos() {
+  fetch('https://mindhub-xj03.onrender.com/api/amazing')
+  .then(response => response.json())
+  .then(datosApi => {
+    console.log(datosApi)
+    eventos = datosApi.events
+    currentDate=datosApi.currentDate
+    console.log(eventos)
+    crearCard(filterEventPast(eventos, currentDate), contenedorCard)
+    crearCheckBoxes(filterEventPast(eventos, currentDate), contenedorCheck)
+    
+  })
+  .catch(error => console.log(error.message))
+  
+}
+traerDatos()
 
 console.log(contenedorCard)
 console.log(contenedorCheck)
@@ -33,7 +53,7 @@ contenedorCheck.addEventListener('change',superFiltro)
 //Superfiltro llama a 3 funciones las filtrarPorTexto, filtrarPorPais y pintarPersonas
 //funciones que definimos mas abajo
 function superFiltro(){
-  let filtroTarjetasPasado= filterEventPast(dataEvents, currentDate)
+  let filtroTarjetasPasado= filterEventPast(eventos, currentDate)
 
   //creamos la variable primerFiltro y le asignamos 
   //la funcion filtrarPorTexto que captura el texto 
@@ -55,15 +75,15 @@ function superFiltro(){
   //y le pasamos el el array con los datos filtrados por segundoFiltro 
   crearCard(segundoFiltro)
 }
-let filtroTarjetasPasado= filterEventPast(dataEvents, currentDate)
+/* let filtroTarjetasPasado= filterEventPast(eventos, currentDate) */
 //Renderizamos las cards con los datos del array dataEvents (se ven todas las cards)
 /* crearCard(dataEvents) */
-crearCard(filtroTarjetasPasado) 
+/* crearCard(filtroTarjetasPasado)  */
 //Creamos los checkbox con los con los datos del array dataEvents (se ven todos las checkbox)
-crearCheckBoxes(filtroTarjetasPasado)
+/* crearCheckBoxes(filtroTarjetasPasado) */
 
 //funcion que crea los checkbox recibe como parametro 
-function crearCheckBoxes(array){
+function crearCheckBoxes(array, _lugar){
   //Declaro la variable local arrayCategorias que nos va a 
   //generar por medio de un map un nuevo array pero solamente
   //con el atributo category(categoria) del array dataEvents 
@@ -94,9 +114,9 @@ function crearCheckBoxes(array){
   contenedorCheck.innerHTML = checkboxes
 }
 //Dibujo las cards
-function crearCard(array){
+function crearCard(array, _lugar){
   if(array.length == 0){
-      contenedor.innerHTML = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
+    contenedorCard.innerHTML = `<h2 class="display-1 fw-bolder">No hay coincidencias</h2>`
       return
   }
   let tarjetas = ''
@@ -160,15 +180,21 @@ function filtrarPorCategorias(array){
 }
 
 //Funcion que filtra los eventos pasados, recibe de parametro data.js y la fecha actual de la variable currentDate del data.js
-function filterEventPast(data, currentDate){
+function filterEventPast(eventos, currentDate){
     const eventPast=[];
-    for (const event of data) {
+    eventos.forEach(evento => {
+      if(evento.date<currentDate){
+        eventPast.push(evento)
+
+    }
+    });
+    /* for (const event of data) {
         if(event.date<currentDate){
             eventPast.push(event)
 
         }
         
-    }
+    } */
     console.log("Eventos pasados: ", eventPast)
     return eventPast
 
