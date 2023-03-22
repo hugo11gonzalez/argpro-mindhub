@@ -32,6 +32,7 @@ function assistance(arrPast) {
     return {
       attendance: (event.assistance / event.capacity) * 100,
       nameEvent: event.name
+      
     }
   })
   arrayPercentage.sort((a, b) => b.attendance - a.attendance)
@@ -55,9 +56,9 @@ function capacity(arrPast) {
 
 function results(highestPercentage, lowestPercentage, largerCapacity) {
   let all = {
-    highestPercentage: highestPercentage[0].nameEvent,
-    lowestPercentage: lowestPercentage[0].nameEvent,
-    largerCapacity: largerCapacity[0].nameEvent
+    highestPercentage: highestPercentage[0].nameEvent + " : " + highestPercentage[0].attendance.toFixed(2)+"%",
+    lowestPercentage: lowestPercentage[0].nameEvent + " : " + lowestPercentage[0].attendance.toFixed(2)+"%",
+    largerCapacity: largerCapacity[0].nameEvent + " : " + largerCapacity[0].capacity+" lugares",
   }
   return all
 }
@@ -76,7 +77,7 @@ function imprimirTabla(results, container) {
 
 
 function datosTabla(arr) {
-  let categories = Array.from(new Set(arr.map(a => a.category)));
+  let categories = Array.from(new Set(arr.map(a => a.category)))
   let eventCategories = categories.map(cat => arr.filter(event => event.category == cat))
   let result = eventCategories.map(eventCat => {
     let calculate = eventCat.reduce((acc, event) => {
